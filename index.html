@@ -17,7 +17,7 @@
     </div>
     <div id="table"></div>
     <script>
-      var eventSelect = $('#eventSelect');
+      var eventSelect = $('#eventSelect').MPEventSelect();
       var propSelect  = $('#propSelect').MPPropertySelect();
       var dateSelect  = $('#dateSelect').MPDatepicker();
       var eventGraph  = $('#graph').MPChart({chartType: 'line'});
@@ -36,7 +36,7 @@
             eventGraph.MPChart('setData', results);
             eventTable.MPTable('setData', results);
           });
-        }
+        }s
       };
       eventSelect.on('change', function(e, eventName) {
         propSelect.MPPropertySelect('setEvent', eventName);
@@ -45,6 +45,7 @@
       });
       propSelect.on('change', runQuery);
       dateSelect.on('change', runQuery);
+      console.log(results)
     </script>
   </body>
 </html>
